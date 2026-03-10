@@ -109,7 +109,7 @@ const products = [
   { name: 'Mag Safe Wireless Charger 15W', img: 'https://images.unsplash.com/photo-1615526675159-e248c3021d3f?w=400&h=400&fit=crop', price: '1,300', rating: '4.50', desc: 'MagSafe 15W fast wireless charger for iPhones and QI devices. Magnetic design.' },
   { name: 'Airpods 2nd Generation Mastercopy', img: 'https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?w=400&h=400&fit=crop', price: '1,200', rating: '4.50', desc: 'Airpods 2nd Gen with premium sound. Touch controls, auto-pairing, long battery.' },
   { name: 'iPhone 20W Fast Charger & Cable', img: 'https://images.unsplash.com/photo-1583863788434-e58a36330cf0?w=400&h=400&fit=crop', price: '900', rating: '4.50', desc: '20W USB-C fast charger with Lightning cable. Charge iPhone 50% in 30 minutes.' },
-  { name: 'Airpods Pro 2 ANC with Free Silicon Case', img: 'https://images.unsplash.com/photo-1600294037681-c80b4cb5b434?w=400&h=400&fit=crop', price: '1,750', rating: '4.34', desc: 'Airpods Pro 2 with Active Noise Cancellation. Includes free silicone case.' },
+  { name: 'Airpods Pro 2 + Free Cover - Master Quality', img: 'https://thegadgetx.in/cdn/shop/files/IMG_9480.webp?v=1766926164&width=416', price: '1,099', rating: '4.71', badge: 'Hot', desc: 'Pods Pro 2 + Free Cover - Master Quality | 1 Yr Warranty. Exactly like OG, All features working. ANC, H2 Chip, Spatial Audio, Dolby Atmos.', link: 'airpods-pro-2.html' },
   { name: 'Airpods Pro 1st Gen Mastercopy', img: 'https://images.unsplash.com/photo-1588423771073-b8903fde1c68?w=400&h=400&fit=crop', price: '1,350', rating: '4.29', desc: 'Airpods Pro 1st Gen with ANC. Transparency mode, spatial audio, sweat resistant.' },
   { name: 'Sonilex Vibe SLBS1811 Bluetooth Speaker', img: 'https://5.imimg.com/data5/SELLER/Default/2025/9/544387780/BI/QB/MP/109762228/image-500x500.jpeg', price: '260', rating: '4.20', badge: 'New', desc: 'Sonilex Vibe SLBS1811 Bluetooth Speaker with 10W output. Balanced sound quality with clear vocals and smooth bass. Easy wireless pairing via Bluetooth. Compact and durable ABS body, ideal for indoor and outdoor use.' },
   { name: 'Portable Neck Fan - Bladeless 4000mAh', img: 'https://m.media-amazon.com/images/I/61Fa85X0GNL._AC_SL1500_.jpg', price: '499', rating: '3.80', desc: 'Portable Hands-Free Bladeless Neck Fan with 4000mAh rechargeable battery. USB charging, headphone design, 3 speed settings. Perfect for outdoor activities, gym, travel, and daily commute. Lightweight and comfortable wear.' },
@@ -130,7 +130,8 @@ function createProductCard(p) {
   var ratingNum = parseFloat(p.rating);
   var stars5 = '\u2605'.repeat(Math.round(ratingNum)) + '\u2606'.repeat(5 - Math.round(ratingNum));
   var dataStr = JSON.stringify(p).replace(/"/g, '&quot;');
-  return '<div class="product-card fade-in" style="cursor:pointer" onclick=\'openProductModal(' + JSON.stringify(p).replace(/'/g, "\\'") + ')\'>' +
+  var clickAction = p.link ? 'window.location.href=\'' + p.link + '\'' : 'openProductModal(' + JSON.stringify(p).replace(/'/g, "\\'") + ')';
+  return '<div class="product-card fade-in" style="cursor:pointer" onclick=\'' + clickAction + '\'>' +
     '<div class="product-img">' +
       (p.badge ? '<span class="product-badge">' + p.badge + '</span>' : '') +
       '<img src="' + p.img + '" alt="' + p.name + '" loading="lazy"/>' +
