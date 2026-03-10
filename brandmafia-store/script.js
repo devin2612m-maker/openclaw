@@ -130,7 +130,7 @@ function createProductCard(p) {
   var ratingNum = parseFloat(p.rating);
   var stars5 = '\u2605'.repeat(Math.round(ratingNum)) + '\u2606'.repeat(5 - Math.round(ratingNum));
   var dataStr = JSON.stringify(p).replace(/"/g, '&quot;');
-  var clickAction = p.link ? 'window.location.href=\'' + p.link + '\'' : 'openProductModal(' + JSON.stringify(p).replace(/'/g, "\\'") + ')';
+  var clickAction = p.link ? 'window.location.href="' + p.link + '"' : 'openProductModal(' + JSON.stringify(p).replace(/'/g, "\\'") + ')';
   return '<div class="product-card fade-in" style="cursor:pointer" onclick=\'' + clickAction + '\'>' +
     '<div class="product-img">' +
       (p.badge ? '<span class="product-badge">' + p.badge + '</span>' : '') +
