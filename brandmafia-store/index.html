@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BrandMafia Store - Premium Gadgets</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <!-- Announcement Marquee -->
+  <div class="marquee-bar">
+    <div class="marquee-track">
+      <span>SALE IS LIVE — Up to 80% OFF on Top Gadgets! &nbsp;&bull;&nbsp; Free Shipping on orders over &#8377;999! &nbsp;&bull;&nbsp; New Arrivals in Tech Gear! &nbsp;&bull;&nbsp; Easy Payments – UPI, Card &amp; COD! &nbsp;&bull;&nbsp; Best Sellers – Loved by our customers! &nbsp;&bull;&nbsp;</span>
+      <span>SALE IS LIVE — Up to 80% OFF on Top Gadgets! &nbsp;&bull;&nbsp; Free Shipping on orders over &#8377;999! &nbsp;&bull;&nbsp; New Arrivals in Tech Gear! &nbsp;&bull;&nbsp; Easy Payments – UPI, Card &amp; COD! &nbsp;&bull;&nbsp; Best Sellers – Loved by our customers! &nbsp;&bull;&nbsp;</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="header-inner">
+      <a href="#" class="logo">BRAND<span>MAFIA</span></a>
+      <nav class="nav" id="nav">
+        <a href="#" class="nav-link active">Home</a>
+        <a href="#categories" class="nav-link">Categories</a>
+        <a href="#trending" class="nav-link">Trending</a>
+        <a href="#deals" class="nav-link">Deals</a>
+        <a href="#products" class="nav-link">All Products</a>
+        <a href="#about" class="nav-link">About</a>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-btn" aria-label="Search" onclick="toggleSearch()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        </button>
+        <button class="icon-btn" aria-label="Wishlist">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21.3l7.8-7.8 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+        </button>
+        <button class="icon-btn cart-btn" aria-label="Cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></svg>
+          <span class="cart-count">0</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Menu" onclick="toggleMenu()">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="search-overlay" id="searchOverlay">
+      <div class="search-box">
+        <input type="text" placeholder="Search products..." />
+        <button onclick="toggleSearch()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Slider -->
+  <section class="hero" id="hero">
+    <div class="hero-slider" id="heroSlider">
+      <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=1600&h=900&fit=crop')">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <p class="hero-subtitle">Welcome To</p>
+          <h1 class="hero-title">BrandMafia<br/>Store</h1>
+          <p class="hero-desc">Your Premium Destination for Tech &amp; Gadgets</p>
+          <a href="#products" class="btn btn-white">Shop Now</a>
+        </div>
+      </div>
+      <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=1600&h=900&fit=crop')">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <p class="hero-subtitle">New Collection</p>
+          <h1 class="hero-title">Smart<br/>Watches</h1>
+          <p class="hero-desc">Premium Smartwatches at Unbeatable Prices</p>
+          <a href="#deals" class="btn btn-white">View Deals</a>
+        </div>
+      </div>
+      <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?w=1600&h=900&fit=crop')">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <p class="hero-subtitle">Best Seller</p>
+          <h1 class="hero-title">Airpods<br/>Pro</h1>
+          <p class="hero-desc">Experience Premium Audio Quality</p>
+          <a href="#trending" class="btn btn-white">Explore</a>
+        </div>
+      </div>
+    </div>
+    <button class="hero-arrow hero-prev" onclick="prevSlide()">&#8249;</button>
+    <button class="hero-arrow hero-next" onclick="nextSlide()">&#8250;</button>
+    <div class="hero-dots" id="heroDots"></div>
+  </section>
+
+  <!-- Trust Badges -->
+  <section class="trust-badges">
+    <div class="container">
+      <div class="badge-grid">
+        <div class="badge-item">
+          <div class="badge-icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 8a2 2 0 0 0-1-1.7l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.7l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
+          </div>
+          <h4>Replacement</h4>
+          <p>We provide replacement for defective/damaged products</p>
+        </div>
+        <div class="badge-item">
+          <div class="badge-icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 16h6v6h-6z"/><path d="M2 16h6v6H2z"/><path d="M9 2h6v6H9z"/><path d="M5 16V9a3 3 0 0 1 3-3h8a3 3 0 0 1 3 3v7"/></svg>
+          </div>
+          <h4>Self Pickup</h4>
+          <p>Local customers can pick their products hand to hand</p>
+        </div>
+        <div class="badge-item">
+          <div class="badge-icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m22 8-6 4 6 4V8Z"/><rect width="14" height="12" x="2" y="6" rx="2" ry="2"/></svg>
+          </div>
+          <h4>Packing Video</h4>
+          <p>We provide parcel packing video of order on demand</p>
+        </div>
+        <div class="badge-item">
+          <div class="badge-icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h4>Fast Delivery</h4>
+          <p>2-3 Days delivery to Metro Cities. 4-6 Days to others.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section class="section categories" id="categories">
+    <div class="container">
+      <h2 class="section-title fade-in">What Tech Are You Exploring Today?</h2>
+      <div class="category-scroll">
+        <div class="category-card fade-in">
+          <img src="https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?w=140&h=140&fit=crop" alt="Airpods" loading="lazy"/>
+          <div class="category-name">Airpods</div>
+        </div>
+        <div class="category-card fade-in">
+          <img src="https://images.unsplash.com/photo-1546868871-af0de0ae72be?w=140&h=140&fit=crop" alt="Smartwatches" loading="lazy"/>
+          <div class="category-name">Smartwatches</div>
+        </div>
+        <div class="category-card fade-in">
+          <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=140&h=140&fit=crop" alt="Headphones" loading="lazy"/>
+          <div class="category-name">Headphones</div>
+        </div>
+        <div class="category-card fade-in">
+          <img src="https://images.unsplash.com/photo-1600294037681-c80b4cb5b434?w=140&h=140&fit=crop" alt="Combos" loading="lazy"/>
+          <div class="category-name">Combos</div>
+        </div>
+        <div class="category-card fade-in">
+          <img src="https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?w=140&h=140&fit=crop" alt="Covers & Straps" loading="lazy"/>
+          <div class="category-name">Covers &amp; Straps</div>
+        </div>
+        <div class="category-card fade-in">
+          <img src="https://images.unsplash.com/photo-1583863788434-e58a36330cf0?w=140&h=140&fit=crop" alt="Chargers & Cables" loading="lazy"/>
+          <div class="category-name">Chargers &amp; Cables</div>
+        </div>
+        <div class="category-card fade-in">
+          <img src="https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=140&h=140&fit=crop" alt="Speakers" loading="lazy"/>
+          <div class="category-name">Speakers</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Showcase (Zaid Tech style) -->
+  <section class="section video-showcase" id="videos">
+    <div class="container">
+      <h2 class="section-title fade-in">Watch Our Product Reviews</h2>
+      <p class="section-subtitle fade-in">See our products in action before you buy</p>
+      <div class="video-scroll" id="videoScroll">
+        <div class="video-card fade-in">
+          <div class="video-thumb">
+            <img src="https://cdn.dotpe.in/longtail/store-logo/5624132/JZmKjHja.jpeg" alt="Apple Watch Review" loading="lazy"/>
+            <div class="play-btn">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </div>
+            <span class="video-duration">3:24</span>
+          </div>
+          <div class="video-info">
+            <h4>Apple Watch Series 10 Super Clone</h4>
+            <div class="video-price">
+              <span class="price-now">&#8377;1,799</span>
+              <span class="price-was">&#8377;84,900</span>
+              <span class="discount-badge">98% OFF</span>
+            </div>
+          </div>
+        </div>
+        <div class="video-card fade-in">
+          <div class="video-thumb">
+            <img src="https://cdn.dotpe.in/longtail/store-logo/5624132/mvdNOdJq.jpeg" alt="Airpods Pro Review" loading="lazy"/>
+            <div class="play-btn">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </div>
+            <span class="video-duration">2:15</span>
+          </div>
+          <div class="video-info">
+            <h4>Airpods Pro 2 Super Quality</h4>
+            <div class="video-price">
+              <span class="price-now">&#8377;799</span>
+              <span class="price-was">&#8377;50,000</span>
+              <span class="discount-badge">98% OFF</span>
+            </div>
+          </div>
+        </div>
+        <div class="video-card fade-in">
+          <div class="video-thumb">
+            <img src="https://cdn.dotpe.in/longtail/store-logo/5624132/bPzXJqCf.jpeg" alt="Game Console Review" loading="lazy"/>
+            <div class="play-btn">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </div>
+            <span class="video-duration">4:02</span>
+          </div>
+          <div class="video-info">
+            <h4>R36s Game Console 64GB AMOLED</h4>
+            <div class="video-price">
+              <span class="price-now">&#8377;2,499</span>
+              <span class="price-was">&#8377;10,000</span>
+              <span class="discount-badge">75% OFF</span>
+            </div>
+          </div>
+        </div>
+        <div class="video-card fade-in">
+          <div class="video-thumb">
+            <img src="https://cdn.dotpe.in/longtail/store-logo/5624132/dKLiJxCs.jpeg" alt="Android Smart Watch" loading="lazy"/>
+            <div class="play-btn">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </div>
+            <span class="video-duration">5:10</span>
+          </div>
+          <div class="video-info">
+            <h4>5G Android Ultra Smart Watch 8GB/128GB</h4>
+            <div class="video-price">
+              <span class="price-now">&#8377;3,499</span>
+              <span class="price-was">&#8377;10,000</span>
+              <span class="discount-badge">65% OFF</span>
+            </div>
+          </div>
+        </div>
+        <div class="video-card fade-in">
+          <div class="video-thumb">
+            <img src="https://cdn.dotpe.in/longtail/store-logo/5624132/zKLiJxAs.jpeg" alt="Airpods Pro Touch" loading="lazy"/>
+            <div class="play-btn">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </div>
+            <span class="video-duration">2:45</span>
+          </div>
+          <div class="video-info">
+            <h4>Airpods Pro+ Touch Screen ANC</h4>
+            <div class="video-price">
+              <span class="price-now">&#8377;1,399</span>
+              <span class="price-was">&#8377;2,500</span>
+              <span class="discount-badge">44% OFF</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trending Products -->
+  <section class="section trending" id="trending">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title fade-in">Trending Products</h2>
+          <p class="section-subtitle fade-in">Most Selling Products on BrandMafia Store</p>
+        </div>
+        <a href="#products" class="btn btn-outline fade-in">View All</a>
+      </div>
+      <div class="product-scroll">
+        <div class="product-card fade-in" style="cursor:pointer" onclick="openProductModal({name:'Airpods Pro 3rd Generation Mastercopy',img:'https://images.unsplash.com/photo-1588423771073-b8903fde1c68?w=400&h=400&fit=crop',price:'1,600 – 1,850',rating:'4.80',desc:'Airpods Pro 3rd Gen Mastercopy with Active Noise Cancellation, Transparency Mode, and Spatial Audio. Premium sound quality.'})">
+          <div class="product-img">
+            <span class="product-badge">Hot</span>
+            <img src="https://images.unsplash.com/photo-1588423771073-b8903fde1c68?w=400&h=400&fit=crop" alt="Airpods Pro 3rd Gen" loading="lazy"/>
+          </div>
+          <div class="product-info">
+            <h3>Airpods Pro 3rd Generation Mastercopy</h3>
+            <div class="product-rating">
+              <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <span>4.8</span>
+            </div>
+            <div class="product-price">
+              <span class="price-now">&#8377;1,600 – &#8377;1,850</span>
+            </div>
+            <button class="btn btn-black btn-sm">View Details</button>
+          </div>
+        </div>
+        <div class="product-card fade-in" style="cursor:pointer" onclick="openProductModal({name:'Apple Watch Series 11 Copy with Logo',img:'https://images.unsplash.com/photo-1434493789847-2f02dc6ca35d?w=400&h=400&fit=crop',price:'1,900',rating:'4.90',desc:'Apple Watch Series 11 Super Clone with Logo. Retina AMOLED display, health monitoring, GPS, water resistant.'})">
+          <div class="product-img">
+            <span class="product-badge new">New</span>
+            <img src="https://images.unsplash.com/photo-1434493789847-2f02dc6ca35d?w=400&h=400&fit=crop" alt="Apple Watch Series 11" loading="lazy"/>
+          </div>
+          <div class="product-info">
+            <h3>Apple Watch Series 11 Copy with Logo</h3>
+            <div class="product-rating">
+              <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <span>4.9</span>
+            </div>
+            <div class="product-price">
+              <span class="price-now">&#8377;1,900</span>
+            </div>
+            <button class="btn btn-black btn-sm">View Details</button>
+          </div>
+        </div>
+        <div class="product-card fade-in" style="cursor:pointer" onclick="openProductModal({name:'Airpods Max Copy with Volume Crown',img:'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=400&fit=crop',price:'1,850',oldPrice:'3,000',rating:'4.50',desc:'Airpods Max Copy with Volume Crown. Premium over-ear headphones with ANC, Spatial Audio, and 20hr battery.'})">
+          <div class="product-img">
+            <span class="product-badge sale">Sale</span>
+            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=400&fit=crop" alt="Airpods Max" loading="lazy"/>
+          </div>
+          <div class="product-info">
+            <h3>Airpods Max Copy with Volume Crown</h3>
+            <div class="product-rating">
+              <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+              <span>4.5</span>
+            </div>
+            <div class="product-price">
+              <span class="price-was">&#8377;3,000</span>
+              <span class="price-now">&#8377;1,850</span>
+            </div>
+            <button class="btn btn-black btn-sm">View Details</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Flash Sale / Blockbuster Deals -->
+  <section class="section deals-section" id="deals">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title fade-in">Big Savings on Big SALE!!!</h2>
+          <p class="section-subtitle fade-in">Flash deals ending soon - grab yours now!</p>
+        </div>
+        <div class="countdown fade-in" id="countdown">
+          <div class="countdown-item"><span id="hours">08</span><small>Hours</small></div>
+          <div class="countdown-item"><span id="minutes">45</span><small>Min</small></div>
+          <div class="countdown-item"><span id="seconds">30</span><small>Sec</small></div>
+        </div>
+      </div>
+      <div class="deals-grid">
+        <div class="deal-card fade-in" style="cursor:pointer" onclick="openProductModal({name:'Airpods Pro 2nd Gen Black Mastercopy',img:'https://images.unsplash.com/photo-1600294037681-c80b4cb5b434?w=400&h=400&fit=crop',price:'1,400 – 1,650',rating:'4.75',desc:'Airpods Pro 2nd Gen in exclusive Black. ANC, Transparency Mode, Spatial Audio. Premium audio quality.'})">
+          <div class="deal-img">
+            <span class="deal-discount">-50%</span>
+            <img src="https://images.unsplash.com/photo-1600294037681-c80b4cb5b434?w=400&h=400&fit=crop" alt="Airpods Pro 2nd Gen Black" loading="lazy"/>
+          </div>
+          <div class="deal-info">
+            <h3>Airpods Pro 2nd Gen Black Mastercopy</h3>
+            <div class="product-rating"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><span>4.75</span></div>
+            <div class="product-price">
+              <span class="price-now">&#8377;1,400 – &#8377;1,650</span>
+            </div>
+            <button class="btn btn-black btn-sm">View Details</button>
+          </div>
+        </div>
+        <div class="deal-card fade-in" style="cursor:pointer" onclick="openProductModal({name:'Ultra Watch Gold 49mm',img:'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&h=400&fit=crop',price:'1,500',oldPrice:'3,000',rating:'4.50',desc:'Ultra Watch Gold 49mm with premium gold finish. Retina display, GPS, heart rate, blood oxygen monitoring.'})">
+          <div class="deal-img">
+            <span class="deal-discount">-50%</span>
+            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&h=400&fit=crop" alt="Ultra Watch Gold" loading="lazy"/>
+          </div>
+          <div class="deal-info">
+            <h3>Ultra Watch Gold 49mm</h3>
+            <div class="product-rating"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div><span>4.50</span></div>
+            <div class="product-price">
+              <span class="price-was">&#8377;3,000</span>
+              <span class="price-now">&#8377;1,500</span>
+            </div>
+            <button class="btn btn-black btn-sm">View Details</button>
+          </div>
+        </div>
+        <div class="deal-card fade-in" style="cursor:pointer" onclick="openProductModal({name:'Ultra 2 Smartwatch with Stainless Steel Chain',img:'https://images.unsplash.com/photo-1546868871-af0de0ae72be?w=400&h=400&fit=crop',price:'1,700',oldPrice:'2,900',rating:'4.30',desc:'Ultra 2 Smartwatch with premium stainless steel chain. Always-on display, water resistant 100m, dual speakers.'})">
+          <div class="deal-img">
+            <span class="deal-discount">-41%</span>
+            <img src="https://images.unsplash.com/photo-1546868871-af0de0ae72be?w=400&h=400&fit=crop" alt="Ultra 2 Smartwatch" loading="lazy"/>
+          </div>
+          <div class="deal-info">
+            <h3>Ultra 2 Smartwatch with Stainless Steel Chain</h3>
+            <div class="product-rating"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div><span>4.30</span></div>
+            <div class="product-price">
+              <span class="price-was">&#8377;2,900</span>
+              <span class="price-now">&#8377;1,700</span>
+            </div>
+            <button class="btn btn-black btn-sm">View Details</button>
+          </div>
+        </div>
+        <div class="deal-card fade-in" style="cursor:pointer" onclick="openProductModal({name:'Silicone Case for Airpods Pro 2nd Generation',img:'https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?w=400&h=400&fit=crop',price:'120',rating:'4.33',desc:'Premium Silicone Case for Airpods Pro 2nd Gen. Shock-proof, dust-proof, and washable. Multiple colors available.'})">
+          <div class="deal-img">
+            <img src="https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?w=400&h=400&fit=crop" alt="Silicone Case" loading="lazy"/>
+          </div>
+          <div class="deal-info">
+            <h3>Silicone Case for Airpods Pro 2nd Generation</h3>
+            <div class="product-rating"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div><span>4.33</span></div>
+            <div class="product-price">
+              <span class="price-now">&#8377;120</span>
+            </div>
+            <button class="btn btn-black btn-sm">View Details</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Product Banner -->
+  <section class="featured-banner fade-in">
+    <div class="featured-content">
+      <div class="featured-text">
+        <h3>Quality Audio Means</h3>
+        <h2>Airpods</h2>
+        <p>Buy Airpods Pro 2nd Generation and experience the audio yourself.</p>
+        <a href="airpods-pro-2.html" class="btn btn-white">View Product</a>
+      </div>
+      <div class="featured-img">
+        <img src="https://thegadgetx.in/cdn/shop/files/IMG_9480.webp?v=1766926164&width=416" alt="Airpods Pro 2nd Gen" loading="lazy"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- All Products Grid -->
+  <section class="section products-grid" id="products">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title fade-in">#Tech Unleashed</h2>
+        <a href="#" class="btn btn-outline fade-in">View All</a>
+      </div>
+      <div class="grid-4" id="productGrid">
+        <!-- Products loaded here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Airpods with Cover -->
+  <section class="section" id="airpods-cover">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title fade-in">Let your AirPods match your vibe!</h2>
+          <p class="section-subtitle fade-in">Get our Best Seller Airpods Pro 2nd Gen with Trendy Cover</p>
+        </div>
+        <a href="#" class="btn btn-outline fade-in">View All</a>
+      </div>
+      <div class="product-scroll" id="coverScroll">
+        <!-- Cover products loaded here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Customer Testimonials -->
+  <section class="section testimonials" id="testimonials">
+    <div class="container">
+      <h2 class="section-title fade-in">What Our Customers Say</h2>
+      <div class="testimonial-scroll">
+        <div class="testimonial-card fade-in">
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <h4>Outstanding Quality &amp; Service</h4>
+          <p>Amazing products and fast delivery! The smartwatch I bought works perfectly, and the customer service was very helpful.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">R</div>
+            <div><strong>Rohan S.</strong><small>Verified Buyer</small></div>
+          </div>
+        </div>
+        <div class="testimonial-card fade-in">
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <h4>Great Value for Money</h4>
+          <p>BrandMafia Store has a great collection of earbuds and chargers. Quality is top-notch and prices are reasonable.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">P</div>
+            <div><strong>Priya</strong><small>Verified Buyer</small></div>
+          </div>
+        </div>
+        <div class="testimonial-card fade-in">
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <h4>Gamer's Paradise</h4>
+          <p>I purchased gaming accessories here, and they exceeded my expectations. Highly recommend this store!</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">A</div>
+            <div><strong>Aman K.</strong><small>Verified Buyer</small></div>
+          </div>
+        </div>
+        <div class="testimonial-card fade-in">
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <h4>Trusted &amp; Reliable</h4>
+          <p>Excellent service and genuine products. I am very happy with my smartwatch and the prompt support.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">B</div>
+            <div><strong>Banita</strong><small>Verified Buyer</small></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="section about" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-text fade-in">
+          <h2 class="section-title">We are pleased to serve you!</h2>
+          <p>At BrandMafia Store, your ultimate destination for the latest and greatest in technology and innovation, we offer a diverse selection of high-quality products to suit all your tech needs. Whether you're looking to buy <strong>AirPods</strong>, explore the world of <strong>smartwatches</strong>, or discover a wide range of <strong>gadgets</strong> online, we have you covered.</p>
+          <p>We pride ourselves on providing cutting-edge audio devices and the latest in wearable technology, combining functionality and style.</p>
+          <a href="#" class="btn btn-black">About Us</a>
+        </div>
+        <div class="about-contact fade-in">
+          <h3>For queries related to website and products.</h3>
+          <a href="https://wa.me/9891021424" class="whatsapp-link">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="#25D366"><path d="M17.5 14.4l-2-1c-.3-.1-.5-.1-.7.1l-.9 1.1c-.2.2-.3.2-.6.1-1.6-.8-2.8-1.8-3.8-3.2-.2-.3-.1-.5.1-.7l.5-.5c.2-.2.2-.3.3-.5.1-.2 0-.4-.1-.5l-1-2.3c-.2-.5-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4C6.6 7.5 6 8.5 6 9.8c0 1.3.9 2.5 1 2.7.1.2 1.8 3 4.5 4.1.6.3 1.1.4 1.5.5.6.2 1.2.1 1.6-.1.5-.3.9-.8 1-1.3.1-.3.1-.5 0-.6z"/><path d="M20.5 3.5C18.2 1.2 15.2 0 12 0 5.4 0 0 5.4 0 12c0 2.1.5 4.2 1.6 6L0 24l6.2-1.6c1.7.9 3.7 1.4 5.8 1.4 6.6 0 12-5.4 12-12 0-3.2-1.2-6.2-3.5-8.5zM12 21.8c-1.8 0-3.5-.5-5-1.3l-.4-.2-3.7 1 1-3.6-.2-.4c-1-1.6-1.5-3.5-1.5-5.3 0-5.4 4.4-9.8 9.8-9.8 2.6 0 5.1 1 6.9 2.9 1.8 1.8 2.9 4.3 2.9 6.9 0 5.4-4.4 9.8-9.8 9.8z"/></svg>
+            WhatsApp 9891021424
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="newsletter">
+    <div class="container">
+      <div class="newsletter-inner fade-in">
+        <h2>Subscribe for Exclusive Deals</h2>
+        <p>Be the first to know about new launches, offers and all the latest news</p>
+        <form class="newsletter-form" onsubmit="event.preventDefault()">
+          <input type="email" placeholder="Enter your email" />
+          <button type="submit" class="btn btn-white">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="#" class="footer-logo">BRAND<span>MAFIA</span></a>
+          <p>Your ultimate destination for the latest and greatest in technology and innovation.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Instagram">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1.1.4 2.2.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.9c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1.1.4-2.2.4-1.3.1-1.6.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1.1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1.1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zM12 0C8.7 0 8.3 0 7 .1 5.7.1 4.7.3 3.9.6c-.9.3-1.6.8-2.3 1.5C.9 2.8.4 3.5.1 4.4-.2 5.2-.4 6.2-.4 7.5-.5 8.8-.5 9.2-.5 12.5s0 3.7.1 5c.1 1.3.3 2.3.6 3.1.3.9.8 1.6 1.5 2.3.7.7 1.4 1.2 2.3 1.5.8.3 1.8.5 3.1.6 1.3.1 1.7.1 5 .1s3.7 0 5-.1c1.3-.1 2.3-.3 3.1-.6.9-.3 1.6-.8 2.3-1.5.7-.7 1.2-1.4 1.5-2.3.3-.8.5-1.8.6-3.1.1-1.3.1-1.7.1-5s0-3.7-.1-5c-.1-1.3-.3-2.3-.6-3.1-.3-.9-.8-1.6-1.5-2.3C21.2.9 20.5.4 19.6.1 18.8-.2 17.8-.4 16.5-.4 15.2-.5 14.8-.5 11.5-.5L12 0zm0 5.8a6.2 6.2 0 100 12.4 6.2 6.2 0 000-12.4zM12 16a4 4 0 110-8 4 4 0 010 8zm7.8-10.4a1.4 1.4 0 11-2.8 0 1.4 1.4 0 012.8 0z"/></svg>
+            </a>
+            <a href="#" aria-label="YouTube">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 00.5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 002.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 002.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.5 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>
+            </a>
+            <a href="https://wa.me/9891021424" aria-label="WhatsApp">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4l-2-1c-.3-.1-.5-.1-.7.1l-.9 1.1c-.2.2-.3.2-.6.1-1.6-.8-2.8-1.8-3.8-3.2-.2-.3-.1-.5.1-.7l.5-.5c.2-.2.2-.3.3-.5.1-.2 0-.4-.1-.5l-1-2.3c-.2-.5-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4C6.6 7.5 6 8.5 6 9.8c0 1.3.9 2.5 1 2.7.1.2 1.8 3 4.5 4.1.6.3 1.1.4 1.5.5.6.2 1.2.1 1.6-.1.5-.3.9-.8 1-1.3.1-.3.1-.5 0-.6z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Information</h4>
+          <a href="#">About Us</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Shipping &amp; Return Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+        <div class="footer-col">
+          <h4>Useful Links</h4>
+          <a href="#">Track Order</a>
+          <a href="#">My Account</a>
+          <a href="#">Your Order Details</a>
+          <a href="#">Contact Us</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <p>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.7a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+            9891021424
+          </p>
+          <p>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            brandmafia@gmail.com
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copy">&copy; 2026 BrandMafia Store | All Rights Reserved</div>
+        <div class="payment-icons">
+          <span>Visa</span>
+          <span>Mastercard</span>
+          <span>UPI</span>
+          <span>COD</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Product Detail Modal -->
+  <div class="product-modal" id="productModal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeProductModal()">&times;</button>
+      <div class="modal-body">
+        <div class="modal-img-wrap">
+          <img id="modalImg" src="" alt="Product" />
+        </div>
+        <div class="modal-details">
+          <h2 id="modalName"></h2>
+          <div class="modal-rating">
+            <span class="stars" id="modalStars"></span>
+            <span id="modalRating"></span>
+          </div>
+          <div class="modal-price">
+            <span class="price-now" id="modalPrice"></span>
+            <span class="price-was" id="modalOldPrice"></span>
+          </div>
+          <p id="modalDesc"></p>
+          <div class="modal-features">
+            <div class="modal-feature"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 8a2 2 0 0 0-1-1.7l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.7l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/></svg> Replacement Available</div>
+            <div class="modal-feature"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Fast Delivery (2-6 Days)</div>
+            <div class="modal-feature"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m22 8-6 4 6 4V8Z"/><rect width="14" height="12" x="2" y="6" rx="2" ry="2"/></svg> Packing Video on Demand</div>
+          </div>
+          <a id="modalWhatsApp" href="#" class="btn btn-black modal-order-btn" target="_blank">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.5 14.4l-2-1c-.3-.1-.5-.1-.7.1l-.9 1.1c-.2.2-.3.2-.6.1-1.6-.8-2.8-1.8-3.8-3.2-.2-.3-.1-.5.1-.7l.5-.5c.2-.2.2-.3.3-.5.1-.2 0-.4-.1-.5l-1-2.3c-.2-.5-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4C6.6 7.5 6 8.5 6 9.8c0 1.3.9 2.5 1 2.7.1.2 1.8 3 4.5 4.1.6.3 1.1.4 1.5.5.6.2 1.2.1 1.6-.1.5-.3.9-.8 1-1.3.1-.3.1-.5 0-.6z"/></svg>
+            Order on WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/9891021424" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.5 14.4l-2-1c-.3-.1-.5-.1-.7.1l-.9 1.1c-.2.2-.3.2-.6.1-1.6-.8-2.8-1.8-3.8-3.2-.2-.3-.1-.5.1-.7l.5-.5c.2-.2.2-.3.3-.5.1-.2 0-.4-.1-.5l-1-2.3c-.2-.5-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4C6.6 7.5 6 8.5 6 9.8c0 1.3.9 2.5 1 2.7.1.2 1.8 3 4.5 4.1.6.3 1.1.4 1.5.5.6.2 1.2.1 1.6-.1.5-.3.9-.8 1-1.3.1-.3.1-.5 0-.6z"/><path d="M20.5 3.5C18.2 1.2 15.2 0 12 0 5.4 0 0 5.4 0 12c0 2.1.5 4.2 1.6 6L0 24l6.2-1.6c1.7.9 3.7 1.4 5.8 1.4 6.6 0 12-5.4 12-12 0-3.2-1.2-6.2-3.5-8.5zM12 21.8c-1.8 0-3.5-.5-5-1.3l-.4-.2-3.7 1 1-3.6-.2-.4c-1-1.6-1.5-3.5-1.5-5.3 0-5.4 4.4-9.8 9.8-9.8 2.6 0 5.1 1 6.9 2.9 1.8 1.8 2.9 4.3 2.9 6.9 0 5.4-4.4 9.8-9.8 9.8z"/></svg>
+  </a>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m18 15-6-6-6 6"/></svg>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
